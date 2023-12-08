@@ -20,7 +20,7 @@ type PostFormProps = {
 }
 
 const PostForm = ({ post }: PostFormProps) => {
-  const { mutateAsync: createPost, isPending: isLoadingCreate } = useCreatePost;
+  const { mutateAsync: createPost, isPending: isLoadingCreate } = useCreatePost();
   const {user} = useUserContext();
   const navigate = useNavigate();
 
@@ -44,7 +44,7 @@ const PostForm = ({ post }: PostFormProps) => {
 
     if(!newPost) {
       toast({
-        title: 'Please try again'
+        title: 'Please try again' 
       })
     }
 
